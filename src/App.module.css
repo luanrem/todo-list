@@ -1,0 +1,18 @@
+.backgroundHeader {
+  background: var(--gray-700);
+  width: 100vw;
+  height: 12.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4.5rem auto;
+
+  max-width: 46rem;
+}
+
+.container>img {
+  height: 3rem;
+}
