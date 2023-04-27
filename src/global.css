@@ -19,7 +19,7 @@
 
 :focus {
   outline: transparent;
-  box-shadow: 0 0 0 2px var(--blue);
+  box-shadow: 0 0 0 1px var(--purple);
 }
 
 * {
@@ -29,8 +29,6 @@
 }
 
 body {
-  height: 100vh;
-  background: linear-gradient(0deg, var(--gray-600) 80.5vh, var(--gray-700) 80.5vh);
   color: var(--gray-200);
   -webkit-font-smoothing: antialiased;
 }

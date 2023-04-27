@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 90px;
+  grid-gap: 0.5rem;
+
+  width: 100%;
+  margin-top: -27px;
+  height: 54px;
+}
+
+.container input {
+  height: 100%;
+  background: var(--gray-500);
+  border: 0;
+  resize: none;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--gray-100);
+}
+
+.container button {
+  height: 100%;
+  background: var(--blueDark);
+  border: 0;
+  border-radius: 8px;
+  color: var(--gray-100);
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container button svg {
+  margin-left: 0.5rem;
+}

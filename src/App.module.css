@@ -5,21 +5,22 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 
   height: 100vh;
   background: linear-gradient(180deg, var(--gray-700) 12.5rem, var(--gray-600) 12.5rem);
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
   margin: 0 auto;
   max-width: 46rem;
 }
 
 .wrapper>img {
   height: 3rem;
-  margin-top: 4.5rem;
+  margin: 4.5rem 0 5rem 0;
 }
