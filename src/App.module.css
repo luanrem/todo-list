@@ -7,12 +7,19 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 4.5rem auto;
+  justify-content: flex-start;
+  align-items: center;
 
+  height: 100vh;
+  background: linear-gradient(180deg, var(--gray-700) 12.5rem, var(--gray-600) 12.5rem);
+}
+
+.wrapper {
+  margin: 0 auto;
   max-width: 46rem;
 }
 
-.container>img {
+.wrapper>img {
   height: 3rem;
+  margin-top: 4.5rem;
 }

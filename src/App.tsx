@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './App.module.css'
 
 import './global.css'
@@ -9,9 +8,11 @@ function App() {
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.backgroundHeader} /> */}
-      <img src={ToDoLogo} alt="ToDo Logo" />
-      <p>hello world</p>
+      <div className={styles.wrapper}>
+        {/* <div className={styles.backgroundHeader} /> */}
+        <img src={ToDoLogo} alt="ToDo Logo" />
+        <p>hello world</p>
+      </div>
     </div>
   )
 }
