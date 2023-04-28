@@ -1,0 +1,37 @@
+.container {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.tasksHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tasksHeader>div {
+  display: flex;
+}
+
+.tasksHeader>div:first-child strong {
+  color: var(--blue);
+  margin-right: 0.5rem;
+}
+
+.tasksHeader>div:last-child strong {
+  color: var(--purple);
+  margin-right: 0.5rem;
+}
+
+.tasksHeader>div p {
+  background: var(--gray-400);
+  width: 25px;
+  height: 19px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}

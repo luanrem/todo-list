@@ -14,7 +14,6 @@ function App() {
         <img src={ToDoLogo} alt="ToDo Logo" />
         <TaskCreation />
         <TasksContainer />
-        <p>hello world</p>
       </div>
     </div>
   )
