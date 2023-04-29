@@ -31,9 +31,10 @@ function App() {
   function handleCreateNewTask(message: string) {
     const newTask: TaskProps = {
       message,
-      id: tasks.length + 1,
+      id: taskList.length + 1,
       checked: false
     }
+    console.log('newTask', newTask)
     setTaskList([...taskList, newTask])
   }
 

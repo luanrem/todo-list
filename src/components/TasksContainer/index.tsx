@@ -42,7 +42,6 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
         message: task.message
       }
     })
-
     setTasks(taskWithIdFixed)
   }
 
