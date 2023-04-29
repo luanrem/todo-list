@@ -11,6 +11,10 @@
   margin-bottom: 0.75rem;
 }
 
+.container p {
+  width: 100%;
+}
+
 /* 
 .container input {
   margin-right: 0.75rem;
