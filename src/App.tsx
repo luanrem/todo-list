@@ -37,10 +37,6 @@ function App() {
     setTaskList([...taskList, newTask])
   }
 
-  function handleCheckTask(id: string) {
-    console.log(id)
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>

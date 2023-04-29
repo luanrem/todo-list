@@ -35,11 +35,11 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
       <header className={styles.tasksHeader}>
         <div>
           <strong>Tarefas Criadas</strong>
-          <p>2</p>
+          <p>{tasks.length}</p>
         </div>
         <div>
           <strong>Concluídas</strong>
-          <p>2 de 5</p>
+          <p>{tasks.filter(task => task.checked === true).length} de {tasks.length}</p>
         </div>
       </header>
       <div className={styles.content}>
