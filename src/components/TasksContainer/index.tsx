@@ -4,10 +4,17 @@ import clipboard from '../../assets/Clipboard.svg'
 import { useState } from 'react'
 import { TaskCard } from '../TaskCard'
 
-export function TasksContainer() {
-  const [hasTask, setHasTask] = useState(false)
+export interface TaskProps {
+  id: number;
+  checked: boolean;
+  message: string;
+}
 
-  const tasks = [1, 2, 3, 4]
+interface TasksContainerProps {
+  tasks: TaskProps[]
+}
+
+export function TasksContainer({ tasks }: TasksContainerProps) {
 
   return (
     <div className={styles.container}>
@@ -22,7 +29,7 @@ export function TasksContainer() {
         </div>
       </header>
       <div className={styles.content}>
-        {hasTask ?
+        {tasks.length === 0 ?
 
           <div className={styles.emptyTaskBoard}>
             <img src={clipboard} alt="ClipBoard" />
