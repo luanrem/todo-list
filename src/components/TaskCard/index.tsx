@@ -15,8 +15,10 @@ export function TaskCard() {
       <button onClick={handleCheck} className={`${styles.checkboxField} ${checked && styles.checked}`}>
         {checked ? <Check size={13} weight='bold' /> : ''}
       </button>
-      <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-      <Trash />
+      <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed </p>
+      <button className={styles.trashButton}>
+        <Trash size={20} />
+      </button>
     </div>
   )
 }

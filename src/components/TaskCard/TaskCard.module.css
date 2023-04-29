@@ -74,3 +74,18 @@ input[type="checkbox"] {
   background: var(--purpleDark);
   border: 2px solid var(--purpleDark);
 }
+
+.trashButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  color: var(--gray-300);
+}
+
+.trashButton:hover {
+  color: var(--red-500);
+}
