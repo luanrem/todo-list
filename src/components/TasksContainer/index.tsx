@@ -1,7 +1,6 @@
 import styles from './TaskContainer.module.css'
 
 import clipboard from '../../assets/Clipboard.svg'
-import { useState } from 'react'
 import { TaskCard } from '../TaskCard'
 
 export interface TaskProps {
@@ -36,8 +35,8 @@ export function TasksContainer({ tasks }: TasksContainerProps) {
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div> :
-          tasks.map(element => {
-            return <TaskCard key={element} />
+          tasks.map(task => {
+            return <TaskCard key={task.id} task={task} />
           })
         }
 

@@ -5,8 +5,7 @@ import './global.css'
 import ToDoLogo from './assets/Logo.svg'
 import { TaskCreation } from './components/TaskCreation'
 import { TaskProps, TasksContainer } from './components/TasksContainer'
-
-
+import { useState } from 'react'
 
 const tasks: TaskProps[] = [
   {
@@ -23,32 +22,30 @@ const tasks: TaskProps[] = [
     id: 3,
     checked: false,
     message: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed bla bla bla bla "
-  },
-  {
-    id: 4,
-    checked: true,
-    message: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed bla bla bla bla "
-  },
-  {
-    id: 5,
-    checked: true,
-    message: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed bla bla bla bla "
-  },
-  {
-    id: 6,
-    checked: false,
-    message: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed bla bla bla bla "
-  },
+  }
 ]
 
 function App() {
+  const [taskList, setTaskList] = useState(tasks)
+
+  function handleCreateNewTask(message: string) {
+    console.log('criou uma nova mensagem', message)
+    const newTask: TaskProps = {
+      message,
+      id: tasks.length + 1,
+      checked: false
+    }
+
+    console.log('criou uma nova mensagem', newTask)
+    setTaskList([...taskList, newTask])
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <img src={ToDoLogo} alt="ToDo Logo" />
-        <TaskCreation />
-        <TasksContainer tasks={tasks} />
+        <TaskCreation createNewTask={handleCreateNewTask} />
+        <TasksContainer tasks={taskList} />
       </div>
     </div>
   )

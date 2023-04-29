@@ -1,23 +1,32 @@
 import { Trash, Check } from '@phosphor-icons/react'
 
 import styles from './TaskCard.module.css'
-import { useState } from 'react'
+import { TaskProps } from '../TasksContainer'
 
+interface TaskCardProps {
+  task: TaskProps;
+}
 
-
-export function TaskCard() {
-  const [checked, setChecked] = useState(true)
+export function TaskCard({ task }: TaskCardProps) {
 
   function handleCheck() {
-    setChecked(!checked)
+    console.log('acionou')
   }
 
   return (
     <div className={styles.container}>
-      <button onClick={handleCheck} className={`${styles.checkboxField} ${checked && styles.checked}`}>
-        {checked ? <Check size={13} weight='bold' /> : ''}
+      <button
+        name='checkboxButton'
+        onClick={handleCheck}
+        className={`${styles.checkboxField} ${task.checked && styles.checked}`}
+      >
+        {task.checked && <Check size={13} weight='bold' />}
       </button>
-      <p className={`${checked && styles.checkedParagraph}`}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed bla bla bla bla </p>
+      <p
+        className={`${task.checked && styles.checkedParagraph}`}
+      >
+        {task.message}
+      </p>
       <button className={styles.trashButton}>
         <Trash size={20} />
       </button>
