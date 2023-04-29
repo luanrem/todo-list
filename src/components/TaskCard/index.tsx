@@ -6,12 +6,17 @@ import { TaskProps } from '../TasksContainer'
 interface TaskCardProps {
   task: TaskProps;
   checkTask: (id: number, checked: boolean) => void;
+  deleteTask: (id: number) => void;
 }
 
-export function TaskCard({ task, checkTask }: TaskCardProps) {
+export function TaskCard({ task, checkTask, deleteTask }: TaskCardProps) {
 
   function handleCheck() {
     checkTask(task.id, task.checked)
+  }
+
+  function handleDelete() {
+    deleteTask(task.id)
   }
 
   return (
@@ -28,7 +33,7 @@ export function TaskCard({ task, checkTask }: TaskCardProps) {
       >
         {task.message}
       </p>
-      <button className={styles.trashButton}>
+      <button onClick={handleDelete} className={styles.trashButton}>
         <Trash size={20} />
       </button>
     </div>

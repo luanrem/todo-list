@@ -30,6 +30,22 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
     setTasks(newTask)
   }
 
+  function handleDeleteTask(id: number) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== id
+    })
+
+    const taskWithIdFixed = tasksWithoutDeletedOne.map((task, index) => {
+      return {
+        id: index + 1,
+        checked: task.checked,
+        message: task.message
+      }
+    })
+
+    setTasks(taskWithIdFixed)
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.tasksHeader}>
@@ -51,7 +67,7 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div> :
           tasks.map(task => {
-            return <TaskCard checkTask={handleCheckTask} key={task.id} task={task} />
+            return <TaskCard deleteTask={handleDeleteTask} checkTask={handleCheckTask} key={task.id} task={task} />
           })
         }
 
