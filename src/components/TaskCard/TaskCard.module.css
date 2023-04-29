@@ -15,50 +15,6 @@
   width: 100%;
 }
 
-/* 
-.container input {
-  margin-right: 0.75rem;
-
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid var(--blue);
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  cursor: pointer;
-  box-shadow: none;
-}
-
-.container input::after:checked {
-  border: 2px solid #fff;
-  border-top: none;
-  border-right: none;
-  content: "";
-  height: 4px;
-  position: absolute;
-  transform: rotate(-45deg);
-  width: 8px;
-}
-
-.container input:checked {
-  background: var(--purple);
-  border: 1px solid var(--purple);
-} */
-/* 
-input[type="checkbox"] {
-  background: green;
-}
-
-.container input {
-  accent-color: red;
-  border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid var(--blue);
-} */
-
 .checkboxField {
   width: 1.2rem;
   height: 1.2rem;
@@ -92,4 +48,9 @@ input[type="checkbox"] {
 
 .trashButton:hover {
   color: var(--red-500);
+}
+
+.checkedParagraph {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
