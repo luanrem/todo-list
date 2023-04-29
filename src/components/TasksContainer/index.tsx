@@ -42,6 +42,7 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
         message: task.message
       }
     })
+
     setTasks(taskWithIdFixed)
   }
 
@@ -58,18 +59,28 @@ export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
         </div>
       </header>
       <div className={styles.content}>
-        {tasks.length === 0 ?
+        {
+          tasks.map(task => {
+            return task.checked === false && <TaskCard deleteTask={handleDeleteTask} checkTask={handleCheckTask} key={task.id} task={task} />
+          })
+        }
+        {
+          tasks.map(task => {
+            return task.checked === true && <TaskCard deleteTask={handleDeleteTask} checkTask={handleCheckTask} key={task.id} task={task} />
+          })
+        }
+        {
+          tasks.length === 0 &&
 
           <div className={styles.emptyTaskBoard}>
             <img src={clipboard} alt="ClipBoard" />
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <p>Crie tarefas e organize seus itens a fazer</p>
-          </div> :
-          tasks.map(task => {
-            return <TaskCard deleteTask={handleDeleteTask} checkTask={handleCheckTask} key={task.id} task={task} />
-          })
+          </div>
         }
+        {
 
+        }
       </div>
     </div>
   )
