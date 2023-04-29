@@ -11,9 +11,24 @@ export interface TaskProps {
 
 interface TasksContainerProps {
   tasks: TaskProps[]
+  setTasks: (tasks: TaskProps[]) => void
 }
 
-export function TasksContainer({ tasks }: TasksContainerProps) {
+export function TasksContainer({ tasks, setTasks }: TasksContainerProps) {
+
+  function handleCheckTask(id: number, checked: boolean) {
+    const newTask = tasks.map(task => {
+      if (task.id === id) {
+        return {
+          id: task.id,
+          checked: !checked,
+          message: task.message
+        }
+      }
+      return task
+    })
+    setTasks(newTask)
+  }
 
   return (
     <div className={styles.container}>
@@ -36,7 +51,7 @@ export function TasksContainer({ tasks }: TasksContainerProps) {
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div> :
           tasks.map(task => {
-            return <TaskCard key={task.id} task={task} />
+            return <TaskCard checkTask={handleCheckTask} key={task.id} task={task} />
           })
         }
 

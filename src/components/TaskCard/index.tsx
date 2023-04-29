@@ -5,12 +5,13 @@ import { TaskProps } from '../TasksContainer'
 
 interface TaskCardProps {
   task: TaskProps;
+  checkTask: (id: number, checked: boolean) => void;
 }
 
-export function TaskCard({ task }: TaskCardProps) {
+export function TaskCard({ task, checkTask }: TaskCardProps) {
 
   function handleCheck() {
-    console.log('acionou')
+    checkTask(task.id, task.checked)
   }
 
   return (

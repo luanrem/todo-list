@@ -29,15 +29,16 @@ function App() {
   const [taskList, setTaskList] = useState(tasks)
 
   function handleCreateNewTask(message: string) {
-    console.log('criou uma nova mensagem', message)
     const newTask: TaskProps = {
       message,
       id: tasks.length + 1,
       checked: false
     }
-
-    console.log('criou uma nova mensagem', newTask)
     setTaskList([...taskList, newTask])
+  }
+
+  function handleCheckTask(id: string) {
+    console.log(id)
   }
 
   return (
@@ -45,7 +46,7 @@ function App() {
       <div className={styles.wrapper}>
         <img src={ToDoLogo} alt="ToDo Logo" />
         <TaskCreation createNewTask={handleCreateNewTask} />
-        <TasksContainer tasks={taskList} />
+        <TasksContainer setTasks={setTaskList} tasks={taskList} />
       </div>
     </div>
   )
