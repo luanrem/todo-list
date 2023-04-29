@@ -42,7 +42,7 @@
   background: var(--purple);
   border: 1px solid var(--purple);
 } */
-
+/* 
 input[type="checkbox"] {
   background: green;
 }
@@ -53,4 +53,24 @@ input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
   border: 1px solid var(--blue);
+} */
+
+.checkboxField {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  margin-right: 0.75rem;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.checkboxField svg {
+  color: var(--gray-100);
+}
+
+.checked {
+  background: var(--purpleDark);
+  border: 2px solid var(--purpleDark);
 }
